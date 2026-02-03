@@ -1,5 +1,5 @@
 { mkDerivation, attoparsec, base, bimap, bytestring, containers
-, cryptohash, hnix, http-conduit, lib, mtl, optparse-applicative
+, cryptonite, hnix, http-conduit, lib, mtl, optparse-applicative
 , prettyprinter, prettyprinter-ansi-terminal, tasty-hspec, text
 , zip-archive
 }:
@@ -10,7 +10,7 @@ mkDerivation {
   isLibrary = true;
   isExecutable = true;
   libraryHaskellDepends = [
-    attoparsec base bytestring containers cryptohash hnix http-conduit
+    attoparsec base bytestring containers cryptonite hnix http-conduit
     mtl prettyprinter text zip-archive
   ];
   executableHaskellDepends = [

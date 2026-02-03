@@ -12,7 +12,7 @@ copyright:           2017 Mateusz Kowalczyk
 category:            Nix
 build-type:          Simple
 extra-source-files:  README.md
-tested-with:         GHC ==8.10.5 || ==9.0.1 || ==9.2.7 || ==9.6.5
+tested-with:         GHC ==9.0.1 || ==9.2.7 || ==9.6.5 || ==9.8.4
 
 library
   hs-source-dirs:      src
@@ -21,7 +21,7 @@ library
                        Nix.JenkinsPlugins2Nix.Types
   build-depends:       base           >=4.7  && < 5
                      , attoparsec     >=0.13 && <0.15
-                     , bytestring     >=0.10 && <0.12
+                     , bytestring     >=0.10 && <0.13
                      , containers     >=0.6  && <0.7
                      , cryptonite     >=0.24 && <0.31
                      , hnix           >=0.6  && <0.18

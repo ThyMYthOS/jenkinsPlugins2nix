@@ -59,8 +59,12 @@ parseConfig = Config
 
     resolutionReader :: Opt.ReadM ResolutionStrategy
     resolutionReader = let
-        strat = \s -> (Text.unpack (head (Text.splitOn ":" (Text.pack s))))
-        version = \s -> (Text.unpack(last (Text.splitOn ":" (Text.pack s))))
+        strat = \s -> Text.unpack $ case Text.splitOn ":" (Text.pack s) of
+          [] -> ""
+          (x:_) -> x
+        version = \s -> Text.unpack $ case reverse (Text.splitOn ":" (Text.pack s)) of
+          [] -> ""
+          (x:_) -> x
       in Opt.eitherReader $ \s -> case Bimap.lookupR (strat s) resolutions of
         Nothing -> Left $ "Invalid dependency resolution, needs to be one of "
                        <> show (Bimap.keysR resolutions)

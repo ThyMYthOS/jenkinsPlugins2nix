@@ -2,7 +2,7 @@
   description = "jenkinsPlugins2nix";
   inputs = {
     flake-utils.url = "github:numtide/flake-utils";
-    nixpkgs.url = "github:NixOS/nixpkgs/24.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/25.05";
   };
 
   outputs = { self, flake-utils, nixpkgs }: flake-utils.lib.eachDefaultSystem (system:
