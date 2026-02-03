@@ -1,0 +1,25 @@
+name: Run command in nix develop with specific channel
+description: Runs a command in nix develop, overriding nixpkgs to a specific channel
+
+inputs:
+  command:
+    description: 'Command to run in nix develop'
+    required: true
+  channel:
+    description: 'NixOS channel version (e.g., nixos-25.05, nixos-25.11)'
+    required: false
+    default: ''
+
+runs:
+  using: composite
+  steps:
+    - name: Run in nix develop
+      shell: bash
+      run: |
+        if [ -n "${{ inputs.channel }}" ]; then
+          nix --extra-experimental-features 'nix-command flakes' develop \
+            --override-input nixpkgs "github:NixOS/nixpkgs/${{ inputs.channel }}" \
+            --command bash -c "${{ inputs.command }}"
+        else
+          nix develop --command bash -c "${{ inputs.command }}"
+        fi
