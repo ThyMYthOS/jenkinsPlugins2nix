@@ -2,14 +2,10 @@
   description = "jenkinsPlugins2nix";
   inputs = {
     flake-utils.url = "github:numtide/flake-utils";
-    nixpkgs.url = "github:NixOS/nixpkgs/23.05";
-    flake-compat = {
-      url = "github:edolstra/flake-compat";
-      flake = false;
-    };
+    nixpkgs.url = "github:NixOS/nixpkgs/24.05";
   };
 
-  outputs = { self, flake-compat, flake-utils, nixpkgs }: flake-utils.lib.eachDefaultSystem (system:
+  outputs = { self, flake-utils, nixpkgs }: flake-utils.lib.eachDefaultSystem (system:
     let pkgs = import nixpkgs {
       inherit system;
     };

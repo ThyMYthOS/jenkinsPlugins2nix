@@ -41,21 +41,24 @@ parseManifest = do
       eManifest :: Either String Manifest
       eManifest = do
         manifest_version' <- getKey "Manifest-Version"
-        archiver_version' <- optional $ getKey "Archiver-Version"
-        created_by' <- optional $ getKey "Created-By"
-        built_by' <- optional $ getKey "Built-By"
-        build_jdk' <- optional $ getKey "Build-Jdk"
-        extension_name' <- optional $ getKey "Extension-Name"
-        specification_title' <- optional $ getKey "Specification-Title"
-        implementation_title' <- optional $ getKey "Implementation-Title"
-        implementation_version' <- optional $ getKey "Implementation-Version"
-        group_id' <- optional $ getKey "Group-Id"
+        let optionalKey :: Text -> Either String (Maybe Text)
+            optionalKey k = Right $! Map.lookup k kvs
+
+        archiver_version' <- optionalKey "Archiver-Version"
+        created_by' <- optionalKey "Created-By"
+        built_by' <- optionalKey "Built-By"
+        build_jdk' <- optionalKey "Build-Jdk"
+        extension_name' <- optionalKey "Extension-Name"
+        specification_title' <- optionalKey "Specification-Title"
+        implementation_title' <- optionalKey "Implementation-Title"
+        implementation_version' <- optionalKey "Implementation-Version"
+        group_id' <- optionalKey "Group-Id"
         short_name' <- getKey "Short-Name"
         long_name' <- getKey "Long-Name"
-        url' <- optional $ getKey "Url"
+        url' <- optionalKey "Url"
         plugin_version' <- getKey "Plugin-Version"
-        hudson_version' <- optional $ getKey "Hudson-Version"
-        jenkins_version' <- optional $ getKey "Jenkins-Version"
+        hudson_version' <- optionalKey "Hudson-Version"
+        jenkins_version' <- optionalKey "Jenkins-Version"
         plugin_dependencies' <- either (\_ -> Right Set.empty) return $
           getKeyParsing "Plugin-Dependencies" parsePluginDependencies
         plugin_developers' <- either (\_ -> Right Set.empty) return $
