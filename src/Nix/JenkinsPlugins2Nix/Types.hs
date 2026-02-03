@@ -2,7 +2,7 @@
 -- |
 -- Module    : Nix.JenkinsPlugins2Nix.Types
 -- Copyright : (c) 2017 Mateusz Kowalczyk
--- License   : BSD3
+-- License   : BSD-3-Clause
 --
 -- Types used through-out jenkinsPlugins2nix
 module Nix.JenkinsPlugins2Nix.Types

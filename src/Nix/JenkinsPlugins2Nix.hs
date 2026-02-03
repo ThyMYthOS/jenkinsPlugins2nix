@@ -2,7 +2,7 @@
 -- |
 -- Module    : Nix.JenkinsPlugins2Nix
 -- Copyright : (c) 2017 Mateusz Kowalczyk
--- License   : BSD3
+-- License   : BSD-3-Clause
 --
 -- Main library entry point.
 module Nix.JenkinsPlugins2Nix where

@@ -1,9 +1,10 @@
+cabal-version:       3.0
 name:                jenkinsPlugins2nix
 version:             0.5.0.2
 synopsis:            Generate nix for Jenkins plugins.
 description:         Generate nix for Jenkins plugins.
 homepage:            https://github.com/Fuuzetsu/jenkinsPlugins2nix#readme
-license:             BSD3
+license:             BSD-3-Clause
 license-file:        LICENSE
 author:              Mateusz Kowalczyk
 maintainer:          fuuzetsu@fuuzetsu.com
@@ -11,8 +12,7 @@ copyright:           2017 Mateusz Kowalczyk
 category:            Nix
 build-type:          Simple
 extra-source-files:  README.md
-cabal-version:       >=1.10
-tested-with:         GHC ==8.6.5 || ==8.8.4 || ==8.10.4 || ==8.10.5
+tested-with:         GHC ==8.8.4 || ==8.10.5 || ==9.0.1 || ==9.2.7
 
 library
   hs-source-dirs:      src

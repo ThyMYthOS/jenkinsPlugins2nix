@@ -2,7 +2,7 @@
 -- |
 -- Module    : Nix.JenkinsPlugins2Nix.Types
 -- Copyright : (c) 2017 Mateusz Kowalczyk
--- License   : BSD3
+-- License   : BSD-3-Clause
 --
 -- Parser tests.
 module Nix.JenkinsPlugins2Nix.Tests.Parser (spec) where

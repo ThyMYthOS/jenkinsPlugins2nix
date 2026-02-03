@@ -3,7 +3,7 @@
 -- |
 -- Module    : Nix.JenkinsPlugins2Nix.Parser
 -- Copyright : (c) 2017 Mateusz Kowalczyk
--- License   : BSD3
+-- License   : BSD-3-Clause
 --
 -- Parsers.
 module Nix.JenkinsPlugins2Nix.Parser

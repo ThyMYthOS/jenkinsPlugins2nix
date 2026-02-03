@@ -3,7 +3,7 @@
 -- |
 -- Module    : Main
 -- Copyright : (c) 2017 Mateusz Kowalczyk
--- License   : BSD3
+-- License   : BSD-3-Clause
 --
 -- @jenkinsPlugins2nix@ entry point.
 module Main (main) where
